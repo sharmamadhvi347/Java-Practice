@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class strlen{
-		public static int getStringlength(String str){
-			int count=0;
-			try{
+public class Strlen{
+		public static int getStringlength(String str) {
+			int count = 0;
+			try {
 				while(true){
 					str.charAt(count);
 					count++;
