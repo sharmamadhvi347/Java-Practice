@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ethical AI Auditor Architecture</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: #1a202c;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .label {
+      font-size: 12px;
+      fill: #e2e8f0;
+    }
+    .block {
+      stroke-width: 2;
+      rx: 10;
+      ry: 10;
+    }
+    .frontend { stroke:#63b3ed; fill:#2b3b55; }
+    .backend { stroke:#48bb78; fill:#2f4a39; }
+    .cloud   { stroke:#9f7aea; fill:#3a2f4a; }
+    .security{ stroke:#ecc94b; fill:#554e2b; }
+    .arrow { stroke:#e2e8f0; stroke-width:2; marker-end:url(#arrowhead); }
+    .dashed { stroke-dasharray:6 4; }
+  </style>
+</head>
+<body>
+<svg width="1000" height="600">
+
+  <!-- Arrowhead -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e2e8f0"/>
+    </marker>
+  </defs>
+
+  <!-- Frontend -->
+  <rect x="80" y="150" width="200" height="200" class="block frontend"/>
+  <text x="100" y="180" class="label">FRONTEND</text>
+  <text x="100" y="210" class="label">Web Interface</text>
+  <text x="100" y="230" class="label">Bias Dashboard</text>
+
+  <!-- Backend -->
+  <rect x="350" y="120" width="250" height="250" class="block backend"/>
+  <text x="370" y="150" class="label">BACKEND</text>
+  <text x="370" y="180" class="label">Node.js / Express</text>
+  <text x="370" y="200" class="label">OpenAI GPT API</text>
+
+  <!-- Cloud Hosting -->
+  <rect x="650" y="300" width="200" height="120" class="block cloud"/>
+  <text x="670" y="330" class="label">CLOUD HOSTING</text>
+  <text x="670" y="355" class="label">Heroku / Vercel</text>
+
+  <!-- Data Security -->
+  <rect x="900" y="200" width="150" height="150" class="block security"/>
+  <text x="920" y="230" class="label">DATA SECURITY</text>
+  <text x="920" y="250" class="label">& PRIVACY</text>
+
+  <!-- Connections -->
+  <line x1="30" y1="250" x2="80" y2="250" class="arrow"/> <!-- User → Frontend -->
+  <text x="20" y="240" class="label">Upload Content</text>
+
+  <line x1="280" y1="200" x2="350" y2="200" class="arrow"/> <!-- Frontend → Backend -->
+  <text x="300" y="190" class="label">Prepare Results</text>
+
+  <line x1="280" y1="260" x2="350" y2="260" class="arrow"/> <!-- Frontend → Backend -->
+  <text x="300" y="250" class="label">Send for Analysis</text>
+
+  <line x1="600" y1="220" x2="900" y2="220" class="arrow dashed"/> <!-- Backend → Security -->
+  <text x="700" y="210" class="label">Secure Processing</text>
+
+  <line x1="600" y1="260" x2="900" y2="260" class="arrow dashed"/> <!-- Backend → Security -->
+  <text x="700" y="250" class="label">Ethical AI Compliance</text>
+
+  <line x1="480" y1="370" x2="650" y2="370" class="arrow"/> <!-- Backend → Cloud -->
+  <text x="520" y="360" class="label">Deployed</text>
+
+  <line x1="750" y1="420" x2="975" y2="420" class="arrow dashed"/> <!-- Cloud → Security -->
+  <text x="800" y="410" class="label">Secure Transfer</text>
+
+</svg>
+</body>
+</html>
